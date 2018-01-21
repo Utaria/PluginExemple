@@ -41,7 +41,7 @@ public class DemoDatabase {
 		// On peut aussi enchainer toutes les méthodes
 		DatabaseSet resultat = maSuperBase.select("monchamp1", "monchamp2")
 				.where("monchamp5 = ?", "monchamp78 = ?")
-				.order("nomchamp2 = DESC")
+				.order("monchamp2 DESC")
 				.attributes("valeur1", 50)
 				.find();
 
