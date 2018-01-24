@@ -38,6 +38,9 @@ public class MonSuperMenu extends Menu {
 			SkullItem tete = new SkullItem(ChatColor.YELLOW + player.getDisplayName(), player.getName(), db.toArray());
 			// WARN: on peut créer une tête sans description, car le 3ème paramètre est optionnel.
 
+			// ... on peut aussi passer plus simplement les lignes de description avec ...
+			new SkullItem(ChatColor.YELLOW + player.getDisplayName(), player.getName(), "Ma ligne 1", "Ma ligne 2");
+
 			// ... on peut effectuer une action lors du clic sur l'item :
 			tete.onItemClick(evenement -> {
 				Player celuiQuiAClique = evenement.getPlayer();
