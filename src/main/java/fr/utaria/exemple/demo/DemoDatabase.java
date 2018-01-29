@@ -24,6 +24,9 @@ public class DemoDatabase {
 		 * ---------------------------- */
 		SelectQuery selectQuery = maSuperBase.select("monchamp1", "monchamp2");
 
+		// On indique la table de séléction ...
+		selectQuery.from("matable");
+
 		// On peut choisir les résultats ...
 		selectQuery.where("monchamp5 = ?", "monchamp78 = ?");
 		// Les "?" représentent les valeurs (voir au-dessous)
@@ -40,6 +43,7 @@ public class DemoDatabase {
 
 		// On peut aussi enchainer toutes les méthodes
 		DatabaseSet resultat = maSuperBase.select("monchamp1", "monchamp2")
+				.from("matable")
 				.where("monchamp5 = ?", "monchamp78 = ?")
 				.order("monchamp2 DESC")
 				.attributes("valeur1", 50)
