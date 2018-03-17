@@ -1,5 +1,6 @@
 package fr.utaria.exemple.demo;
 
+import com.google.common.collect.Sets;
 import fr.utaria.utariacore.zones.ZoneManager;
 import fr.utaria.utariacore.zones.flags.Flags;
 import fr.utaria.utariacore.zones.zone.ChunkZone;
@@ -51,6 +52,9 @@ public class DemoZones {
 				Flags.TNT
 		);
 
+		// Appliquer un drapeau qui nécessite une liste de valeurs
+		zone.apply(Flags.BLOCKED_CMDS, Sets.newHashSet("macommande", "commande2", "cmd3"));
+
 		// Applique une priorité sur une zone.
 		// Les drapeaux de celle-ci seront donc prioritaires sur les
 		// zones moins prioritaires (priorité par défaut = 0).
@@ -59,11 +63,17 @@ public class DemoZones {
 		// Supprime un drapeau d'une zone.
 		zone2.removeFlag(Flags.BLOCK_BREAK);
 
+
 		/* ----------------------------------
 		 * --- Gestion des supers-membres ---
 		 * ---------------------------------- */
 
-		// A venir ...
+		// Ajout d'un super-joueur à la zone (ne sera pas affecté par les drapeauxde la zone)
+		zone.addSuperPlayer("Utarwyn");
+		zone.addSuperPlayer("Nywratu");
+
+		// Suppression du super-membre
+		zone.removeSuperPlayer("Nywratu");
 
 
 		/* ------------------------
@@ -76,7 +86,6 @@ public class DemoZones {
 
 		Location loc = new Location(Bukkit.getWorld("WORLD"), -25, 85, 25);
 		boolean ok = zone2.isInside(loc);
-
 	}
 
 }
