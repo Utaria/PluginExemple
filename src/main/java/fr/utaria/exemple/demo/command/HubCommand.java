@@ -8,6 +8,18 @@ import org.bukkit.entity.Player;
 
 public class HubCommand extends AbstractCommand {
 
+	/* ----------------------------------------------------------------
+	 * --- CE CODE DOIT ÊTRE UTILISE POUR INITIALISER LA COMMANDE   ---
+	 * ----------------------------------------------------------------
+	 * --- Il doit être utilisé pour enregistrer la commande au     ---
+	 * --- démarrage de votre serveur. Il est par ailleurs inutile  ---
+	 * --- d'enregistrer votre commande dans le plugin.yml.         ---
+	 * ---------------------------------------------------------------- *
+
+		CommandManager.registerCommand(new HubCommand());
+
+	 * -----------------  */
+
 	public HubCommand() {
 		// 1er argument: nom initial de la commande
 		// Autres arguments: alias (si besoin, sinon ne rien mettre)
